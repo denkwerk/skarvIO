@@ -1,0 +1,6 @@
+framework module skarvIO {
+  umbrella header "skarvIO.h"
+
+  export *
+  module * { export * }
+}
