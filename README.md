@@ -94,7 +94,7 @@ Get the Unit States ( Not Tested, Work in Progress ):
 ```
 Get the Current Alarm State ( On / Off ):
 ```
-   - (BOOL) skarvIOAlarmSta te: ( void(^)( BOOL Success, BOOL enabled, NSError *error ) ) completion;
+   - (BOOL) skarvIOAlarmState: ( void(^)( BOOL Success, BOOL enabled, NSError *error ) ) completion;
 ```
 Get the Current Demo State ( On / Off ):
 ```
@@ -106,11 +106,11 @@ Disable All Motions:
 ```
 Enable a Motion Function on One Vibration Unit:
 ```
-   - (BOOL) skarvIOEnableMotionFunction: ( uint8_t ) function toVibrationUnit: ( uint8_t ) unit completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
+   - (BOOL) skarvIOEnableMotionFunction: ( enum skarvIOMotion ) function toVibrationUnit: ( uint8_t ) unit completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 ```
 Enable a Motion Function to one or More Vibration Units:
 ```
-   - (BOOL) skarvIOEnableMotionFunction: ( uint8_t ) function toVibrationUnits: ( uint8_t ) units completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
+   - (BOOL) skarvIOEnableMotionFunction: ( enum skarvIOMotion ) function toVibrationUnits: ( uint16_t ) units completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 ```
 
 
