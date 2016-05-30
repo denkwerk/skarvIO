@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>.DS_Store</key>
-		<data>
-		DQpGnX08/GwAFGLhE38oOxiKGVw=
-		</data>
 		<key>Headers/skarvIO.h</key>
 		<data>
 		ewnBMBLtaeZytmJhO6GHrynePDM=
@@ -20,10 +16,6 @@
 		<data>
 		rV3KKsmfMTIbzsdsqWXCslkyha8=
 		</data>
-		<key>PrivateHeaders/DWIwOSPaket.h</key>
-		<data>
-		STSoxp7TCDdrR5B8kP8uQoF50gM=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -34,10 +26,6 @@
 		<key>Modules/module.modulemap</key>
 		<data>
 		rV3KKsmfMTIbzsdsqWXCslkyha8=
-		</data>
-		<key>PrivateHeaders/DWIwOSPaket.h</key>
-		<data>
-		STSoxp7TCDdrR5B8kP8uQoF50gM=
 		</data>
 	</dict>
 	<key>rules</key>
