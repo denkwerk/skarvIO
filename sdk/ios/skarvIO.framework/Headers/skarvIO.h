@@ -31,6 +31,32 @@ enum skarvIOState : uint16_t {
     skarvIOStateDiscovering         = 0x1 << 4
 };
 
+enum skarvIOUnit : uint16_t {
+    skarvIOUnit1                    = 0x1 << 0,
+    skarvIOUnit2                    = 0x1 << 1,
+    skarvIOUnit3                    = 0x1 << 2,
+    skarvIOUnit4                    = 0x1 << 3,
+    skarvIOUnit5                    = 0x1 << 4,
+    skarvIOUnit6                    = 0x1 << 5,
+    skarvIOUnit7                    = 0x1 << 6,
+    skarvIOUnit8                    = 0x1 << 7,
+    skarvIOUnit9                    = 0x1 << 8,
+    skarvIOUnit10                   = 0x1 << 9,
+    skarvIOUnit11                   = 0x1 << 10,
+    skarvIOUnit12                   = 0x1 << 11,
+    skarvIOUnit13                   = 0x1 << 12,
+    skarvIOUnit14                   = 0x1 << 13,
+    skarvIOUnit15                   = 0x1 << 14,
+    skarvIOUnit16                   = 0x1 << 15,
+};
+
+enum skarvIOMotion : uint8_t {
+    skarvIOMotionPulse              = 0x0,
+    skarvIOMotionOnOff              = 0x1,
+    skarvIOMotionLinearOnOff        = 0x2,
+    skarvIOMotionHeartBeat          = 0x3,
+};
+
 
 /* ------------------------------------------------------------------------------------------------------------
  * ------------------------------------------------ PROTOCOLS -------------------------------------------------
@@ -77,8 +103,8 @@ enum skarvIOState : uint16_t {
 - (BOOL) skarvIOAlarmState: ( void(^)( BOOL Success, BOOL enabled, NSError *error ) ) completion;
 - (BOOL) skarvIODemoState: ( void(^)( BOOL Success, BOOL enabled, NSError *error ) ) completion;
 - (BOOL) skarvIOStopAllMotion: ( void(^)( BOOL Success, NSError *error ) ) completion;
-- (BOOL) skarvIOEnableMotionFunction: ( uint8_t ) function toVibrationUnit: ( uint8_t ) unit completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
-- (BOOL) skarvIOEnableMotionFunction: ( uint8_t ) function toVibrationUnits: ( uint8_t ) units completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
+- (BOOL) skarvIOEnableMotionFunction: ( skarvIOMotion ) function toVibrationUnit: ( uint8_t ) unit completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
+- (BOOL) skarvIOEnableMotionFunction: ( skarvIOMotion ) function toVibrationUnits: ( uint16_t ) units completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 
 
 @property ( nonatomic, assign ) BOOL                    deviceBufferEnable;
