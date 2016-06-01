@@ -81,7 +81,7 @@ enum skarvIOMotion : uint8_t {
 /**
  *  Ready to Use Delegate Method
  *
- *  @param enable The Skarv is ready if the passed value is YES.
+ *  @param enable SKARV is ready if the passed value is YES.
  *
  *  @since 1.0b
  */
@@ -90,14 +90,14 @@ enum skarvIOMotion : uint8_t {
 @optional
 
 /**
- *  Disconnect Delegate Method. Called when the Connection is canceled or disconnected.
+ *  Disconnect delegate method: called when the connection is canceled or disconnected.
  *
  *  @since 1.0b
  */
 - (void) skarvIODisconnected;
 
 /**
- *  Automated Reconnect Delegate Method. Called when an Reconnect has occured.
+ *  Automated reconnect delegate method: called when a reconnect has occurred.
  *
  *  @since 1.0b
  */
@@ -119,7 +119,7 @@ enum skarvIOMotion : uint8_t {
 @interface skarvIO : NSObject
 
 /**
-*  Shared Instance from the skarvIO Class
+*  Shared instance from the skarvIO Class
 *
 *  @return skarvIO Instance
 *
@@ -133,23 +133,23 @@ enum skarvIOMotion : uint8_t {
  *  skarvIO Inititalization Method.
  *
  *  @return Result of the Initialization.
- *  @warning Must be executed before other Methods.
+ *  @warning Must be executed before other methods.
  *
  *  @since 1.0b
  */
 - (BOOL) skarvIOInitialize;
 
 /**
- *  Enable and Initialize the Bluetooth LE Stack
+ *  Enable and initialize the bluetooth LE stack
  *
- *  @return Return NO when a general Bluetooth error occurred or the initialization method was not called before.
+ *  @return Return NO when a general bluetooth error has occurred or the initialization method was not called before
  *
  *  @since 1.0b
  */
 - (BOOL) skarvIOEnable;
 
 /**
- *  Disable & Uninitialize the Bluetooth Stack
+ *  Disable & uninitialize the bluetooth stack
  *
  *  @return Return NO when a general Error occured.
  *
@@ -158,10 +158,10 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIODisable;
 
 /**
- *  Connecta to a SKARV Device with the given code.
+ *  Connect to a SKARV device with the given code
  *
  *  @param device     The Device Code.
- *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
+ *  @param completion Completion block is executed after a successful or failed call. Error parameter not in use.
  *
  *  @return Return NO when a general Error occured.
  *
@@ -170,7 +170,7 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIOConnectToDevice: ( NSInteger ) device completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 
 /**
- *  Disconnect the Device
+ *  Disconnect the SKARV device
  *
  *  @return Return NO when a general Error occured.
  *
@@ -179,7 +179,7 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIODisconnect;
 
 /**
- *  Power Off the SKARV Device.
+ *  Power off the SKARV device
  *
  *  @return Return NO when a general Error occured.
  *
@@ -188,10 +188,10 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIOPowerOff;
 
 /**
- *  En- or Disable the Demo Mode. The Demo Mode lets the vibration Units randomly vibrate.
+ *  En- or disable the demo mode: the demo mode lets the vibration units randomly vibrate.
  *
- *  @param enable     En- or Disable the Demo Mode.
- *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
+ *  @param enable     En- or disable the demo mode.
+ *  @param completion Completion block is executed after a successful or failed call. Error parameter not in use.
  *
  *  @return Return NO when a general Error occured.
  *
@@ -200,10 +200,10 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIODemoMode: ( BOOL ) enable completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 
 /**
- *  En- or Disable the Alarm Mode. If the Alarm Mode is activated, a Vibration is triggered as soon as the SKARV staying a certain Distance from the Smartphone away.
+ *  En- or disable the alarm mode: if the alarm mode is activated, a vibration is triggered as soon as the SKARV is a certain distance from the smartphone.
  *
- *  @param enable     En- or Disable the Alarm Mode.
- *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
+ *  @param enable     En- or disable the alarm mode.
+ *  @param completion Completion block is executed after a successful or failed call. Error parameter not in use.
  *
  *  @return Return NO when a general Error occured.
  *
@@ -214,8 +214,8 @@ enum skarvIOMotion : uint8_t {
 /**
  *  Enabling a vibration unit
  *
- *  @param unit       The Unit to be Activated. With Full Power. @see enum skarvIOUnit
- *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
+ *  @param unit       The unit to be activated with full power. @see enum skarvIOUnit
+ *  @param completion Completion block is executed after a successful or failed call. Error parameter not in use.
  *
  *  @return Return NO when a general Error occured.
  *
@@ -226,7 +226,7 @@ enum skarvIOMotion : uint8_t {
 /**
  *  Disabling a vibration unit
  *
- *  @param unit       The Unit to be Deactivated. @see enum skarvIOUnit
+ *  @param unit       The unit to be deactivated. @see enum skarvIOUnit
  *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
  *
  *  @return Return NO when a general Error occured.
@@ -236,10 +236,10 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIODisableVibrationUnit: ( enum skarvIOUnit ) unit completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 
 /**
- *  Set a Value between 0 and 255 to a Vibration Unit.
+ *  Set a value between 0 and 255 to a vibration unit.
  *
- *  @param value      Value to a Vibration Unit to be set.
- *  @param unit       Vibration Unit. @see enum skarvIOUnit
+ *  @param value      Value for the vibration units to be set.
+ *  @param unit       Vibration unit. @see enum skarvIOUnit
  *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
  *
  *  @return Return NO when a general Error occured.
@@ -249,10 +249,10 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIOSetValue: ( uint8_t ) value toVibrationUnit: ( enum skarvIOUnit ) unit completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 
 /**
- *  Set a Value between 0 and 255 to certain Vibration Units.
+ *  Set a value between 0 and 255 to certain vibration units.
  *
- *  @param value      Value to the Vibration Units to be set.
- *  @param units      Vibration Units represented in a Bitmask. @see enum skarvIOUnit
+ *  @param value      Value for the vibration units to be set.
+ *  @param units      Vibration units represented in a bitmask. @see enum skarvIOUnit
  *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
  *
  *  @return Return NO when a general Error occured.
@@ -262,9 +262,9 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIOSetValue: ( uint8_t ) value toVibrationUnits: ( uint16_t ) units completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 
 /**
- *  Set a Value between 0 and 255 to all Vibration Units.
+ *  Set a value between 0 and 255 to all vibration units.
  *
- *  @param values     Value to the Vibration Units to be set.
+ *  @param values     Value for the vibration units to be set.
  *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
  *
  *  @return Return NO when a general Error occured.
@@ -274,7 +274,7 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIOSetValuesToAllUnits: ( uint8_t* ) values completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 
 /**
- *  Get the Current State of the Vibration Units. ( Not Completely Implemented ).
+ *  Get the current state of the vibration units. ( Not completely implemented ).
  *
  *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
  *
@@ -285,7 +285,7 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIOUnitState: ( void(^)( BOOL Success, uint8_t units, NSError *error ) ) completion;
 
 /**
- *  Get the Current State of the Alarm Modus.
+ *  Get the current state of the alarm mode.
  *
  *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
  *
@@ -296,7 +296,7 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIOAlarmState: ( void(^)( BOOL Success, BOOL enabled, NSError *error ) ) completion;
 
 /**
- *  Get the Current State of the Demo Modus.
+ *  Get the current state of the demo mode.
  *
  *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
  *
@@ -307,7 +307,7 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIODemoState: ( void(^)( BOOL Success, BOOL enabled, NSError *error ) ) completion;
 
 /**
- *  Deactivate all Vibration Units.
+ *  Deactivate all vibration Units.
  *
  *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
  *
@@ -318,10 +318,10 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIOStopAllMotion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 
 /**
- *  Enable a given Function to a specific Vibration Unit.
+ *  Enable a given function for a specific vibration unit.
  *
- *  @param function Vibration Function to be activated.
- *  @param unit Vibration Unit. @see enum skarvIOUnit
+ *  @param function Vibration function to be activated.
+ *  @param unit Vibration unit. @see enum skarvIOUnit
  *  @param completion Completion Block is executed after a successful or failed call. Error Parameter not in use.
  *
  *  @return Return NO when a general Error occured.
@@ -331,7 +331,7 @@ enum skarvIOMotion : uint8_t {
 - (BOOL) skarvIOEnableMotionFunction: ( enum skarvIOMotion ) function toVibrationUnit: ( uint8_t ) unit completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 
 /**
- *  Enable a given Function to all Vibration Units.
+ *  Enable a given function for all vibration units.
  *
  *  @param function Vibration Function to be activated.
  *  @param units Vibration Units. @see enum skarvIOUnit
@@ -345,28 +345,28 @@ enum skarvIOMotion : uint8_t {
 
 
 /**
- *  En- or Disable the Bluetooth Device Buffer. Backup all Bluetooth Devices, where found, in a specified File. Accelerates the Reconnection Process after opening the App.
+ *  En- or disable the bluetooth device buffer. Backup all bluetooth devices where they are found in a specified File. This accelerates the reconnection process after opening the App.
  *
  *  @since 1.0b
  */
 @property ( nonatomic, assign ) BOOL                    deviceBufferEnable;
 
 /**
- *  En- or Disable the Reconnection Process. Automatically Reconnect after a exceptional Disconnect.
+ *  En- or disable the reconnection process. Here it will automatically reconnect after a exceptional disconnect.
  *
  *  @since 1.0b
  */
 @property ( nonatomic, assign ) BOOL                    autoConnect;
 
 /**
- *  En- or Disable the Logging Function.
+ *  En- or disable the logging function.
  *
  *  @since 1.0b
  */
 @property ( nonatomic, assign ) BOOL                    logging;
 
 /**
- *  Property holds the current connected Device ID.
+ *  Property holds the current connected device ID.
  *
  *  @since 1.0b
  */
@@ -380,7 +380,7 @@ enum skarvIOMotion : uint8_t {
 @property ( nonatomic, assign, readonly ) uint16_t      state;
 
 /**
- *  Bluetooth Device Buffer File Name.
+ *  Bluetooth device buffer file name.
  *
  *  @since 1.0b
  */
