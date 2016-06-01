@@ -3,7 +3,7 @@ SDK for SKARV
 
 ## Description
 
-Das skarvIO SDK beinhaltet den kompletten Protokoll Stack zur Steuerung und Verwaltung des denkwerk Skarv Wearables ab der iOS 8.1 SDK. Der eigentlich Schal wird mittels eines eindeutigen Codes angesprochen bzw. verbunden. Nach dem verbinden stehen mehrere Funktionen und Status Abfragen zur Verfügung. Mittles des SDKs können eigene oder auch vorgefertigte Vibrationsmuster zur signalisierung oder Benachrichtigung des Benutzers an den Schal versendet werden. Für weitere Informationen besuchen sie bitte folgende Seite: http://www.skarv-fashion.com
+The skarvIO SDK contains the complete protocol stack for the control and management of the denkwerk SKARV wearable starting with iOS 8.1 SDK. The actual scarf is connected through a unique code. After connecting, many functions and status questions become available. Using the SDKs, you can send your own or ready-made vibration patterns to the scarf to signal or notify the user. For more information please visit the following website: http://www.skarv-fashion.com
 
 ## Requirements
 
@@ -36,7 +36,7 @@ Initialize & Enable the SDK:
 
 ## Delegates
 
-This Method is called if the skarvIO SDK is Ready to Work.
+This method is called if the skarvIO SDK is ready to work.
 
     - (void) skarvIOReady:(BOOL)enable {
       [_skarvIO skarvIOConnectToDevice:102208706 completion:^(BOOL Success, NSError *error) {
@@ -44,12 +44,12 @@ This Method is called if the skarvIO SDK is Ready to Work.
       }
     }
 
-This Method is called if an unexpectedly or regular Disconnection to a SKARV is occurred.
+This method is called if an unexpected or regular disconnection to SKARV has occurred.
 
     - (void) skarvIODisconnected {
     }
 
-This Method is called if Auto-Reconnect is Enabled and an unexpectedly Disconnect is occured.
+This method is called if auto-reconnect is enabled and an unexpected disconnect occurs.
 
     - (void) skarvIOAutomatedReconnected {
     }
@@ -80,7 +80,7 @@ Set a Value ( 0 - 255 ) to One Vibration Unit:
 ```
    - (BOOL) skarvIOSetValue: ( uint8_t ) value toVibrationUnit: ( uint8_t ) unit completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 ```
-Set a Value to one or more Vibration Units ( units is a Bitmask bx0000000000000001 == Vibration Unit "One" ):
+Set a value to one or more vibration units (units are a Bitmask bx0000000000000001 == vibration unit "one"):
 ```
    - (BOOL) skarvIOSetValue: ( uint8_t ) value toVibrationUnits: ( uint16_t ) units completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 ```
@@ -88,7 +88,7 @@ Set a Value to all Vibration Units:
 ```
    - (BOOL) skarvIOSetValuesToAllUnits: ( uint8_t* ) values completion: ( void(^)( BOOL Success, NSError *error ) ) completion;
 ```
-Get the Unit States ( Not Tested, Work in Progress ):
+Get the unit states (not tested, work in progress).:
 ```
    - (BOOL) skarvIOUnitState: ( void(^)( BOOL Success, uint8_t units, NSError *error ) ) completion;
 ```
